@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html  lang="en">
+    <head>
+        <title>
+            Formulario de Gestión
+        </title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="static/css/estilo_fromulario.css">
+
+    </head>
+    <header>
+        <!--<img src="C:/Trabajos Visual Studio Code/Tercer Semestre/proyecto gestion/imagenesfot.png" alt="imagen_encabezado" class="imagen_encabezado">-->
+    
+        <img src="static/imagenes/imagenesfot.png" alt="imagen_encabezado" class="imagen_encabezado">
+        <img src="static/imagenes/epnlogo.png" alt="imagen_encabezado2"class="imagen_encabezado2">
+
+
+        <h1>
+            Formulario FCP-001
+        </h1>
+    </header>
+    <body>
+
+        <p>
+            Estimado estudiante en este apartado debera completar los siguientes datos que le permitiran completar la información del formulario.
+        </p>
+        <form action="/form" method="post">
+            <fieldset>
+                <legend>1. ACTIVIDADES PARA LAS QUE SOLICITA LA CONVALIDACIÓN</legend>
+                <label class="datos_formulario" for="Sevicio_comunitario"><input id="Sevicio_comunitario" type="radio" name="Tipo_Practicas">Servicio Comunitario</label>
+                <label class="datos_formulario" for="Laborales"><input id="Laborales" type="radio" name="Tipo_Practicas">Laborales</label>
+              
+                <label class="datos_formulario">Servicio Comunitario
+                    <select name="comunitarias">
+                        <option>Escoja una opcion</option>
+                        <option>Actividades solidarias y de cooperación</option>
+                        <option>Participación en juntas receptoras del voto</option>
+                    </select>
+                </label>
+                <label class="datos_formulario">Laborales
+                    <select name="laborales" >
+                        <option>Escoja una opcion</option>
+                        <option>Participacion Estudiantil en Actividades Académicas, de Gestión, de Investigación y de Colaboración en Eventos Académicos </option>
+                        <option>Representacion Estudiantil</option>
+                        <option>Estudiantes mentores</option>
+                        <option>Actividades Deportivas planificadas por la Institución</option>
+                        <option>Experiencia Laboral</option>
+                        <option>Dirección de ramas de organizaciones estudiantiles académicas</option>
+                        <option>Representación de la Institución en competencias académicas </option>
+                        <option>Clubes, Coro y Grupo de Cámara</option>
+                        <option>Representación de la Institución en competencias deportivas</option>
+                        <option>Participación en la dirección de asociaciones de estudiantes</option>
+                    </select>
+                </label>
+               
+
+            </fieldset>
+
+            <fieldset>
+                <legend>2. DATOS DEL ESTUDIANTE</legend>
+                <label class="datos_formulario" for="Nombres_y_Apellidos_Estudiante">Nombres y Apellidos: <input type="text" id="Nombres_y_Apellidos_Estudiante" name="Nombres_y_Apellidos_Estudiante" required></label>
+                <label class="datos_formulario" for="Cedula_Estudiante">Cedula: <input type="text" id="Cedula_Estudiante" name="Cedula_Estudiante" maxlength="10" pattern="[0-9]{10}" required></label>
+                <label class="datos_formulario" for="Email_Estudiante">Email: <input type="email" name="Email_Estudiante" id="Email_Estudiante" required></label>
+                <label class="datos_formulario" for="Telefono_Estudiante">Telefono: <input type="text" name="Telefono_Estudiante" id="Telefono_Estudiante" maxlength="10" pattern="[0-9]{10}" required></label>
+                <label class="datos_formulario" for="Celular_Estudiante">Celular: <input type="text" name="Celular_Estudiante" id="Celular_Estudiante" maxlength="10" pattern="[0-9]{10}" required></label>
+            </fieldset>
+            <fieldset>
+                <legend>3. DOCUMENTACIÓN DE SOPORTE ADJUNTA</legend>
+                <label class="datos_formulario" >Ingrese el nombre de la Documentación y cargue el archivo correspondiente (PDF): </label>
+                <label class="datos_formulario" for="Doc1"><input type="text" name="Nombre_Documento" id="Doc1"><input type="file"></label>
+                <button>Añadir documento</button>
+            </fieldset>
+            <fieldset>
+                <legend>4. INFORMACIÓN DE LA INSTITUCIÓN EN LA QUE REALIZÓ LAS ACTIVIDADES</legend>
+                <label class="datos_formulario" for="Razon_social">Razon social *: <input type="text" name="Razon_social" id="Razon_social" required></label>
+                <label class="datos_formulario" for="RUC">RUC *: <input id="RUC" name="RUC" type="text" maxlength="13" pattern="[0-9]{13}" required></label>
+                <label class="datos_formulario" for="Direccion_Institucion">Direccion *: <input type="text" name="Direccion_Institucion" id="Direccion_Institucion" required></label>
+                <label class="datos_formulario" for="Ciudad_Institucion">Ciudad/Pais *: <input type="text" id="Ciudad_Institucion" name="Ciudad_Institucion" required></label>
+                <label class="datos_formulario" for="Telefono_Institucion">Telefono *: <input id="Telefono_Institucion" name="Telefono_Institucion" type="text" maxlength="10" pattern="[0-9]{10}" required></label>
+                <label class="datos_formulario" for="Celular_Institucion">Celular *: <input id="Celular_Institucion" name="Celular_Institucion" type="text" maxlength="10" pattern="[0-9]{10}" required></label>
+                <label class="datos_formulario" for="Email_Institucion">Email *: <input id="Email_Institucion" name="Email_Institucion" type="email" required></label>
+                <label class="datos_formulario">Tipo de Institucion *: 
+                    <select name="Tipo_Institucion" id="Tipo_Institucion">
+                        <option>Escoja una opcion</option>
+                        <option>Organismo Internacional</option>
+                        <option>Pública</option>
+                        <option>Privada</option>
+                        <option>Tercer Sector</option>
+                        <option>Otras</option>
+                    </select>
+                </label>
+                <label class="datos_formulario">Campo Amplio: 
+                    <select name="Campo_Institucion" id="Campo_Institucion">
+                        <option>Ciencias Sociales, Periodismo, Información Y Derecho</option>
+                    </select>
+                </label>
+                <label class="datos_formulario">Campo Especifico: 
+                    <select name="Campo_Especifico" id="Campo_Especifico">
+                        <option>Ciencias sociales y del comportamiento</option>
+                        <option>Derecho</option>
+                        <option>Periodismo e información</option>
+                    </select>
+                </label> 
+                <label class="datos_formulario" for="Codigo_Convenio">Código de Proyecto/Convenio: <input id="Codigo_Convenio" name="Codigo_Convenio" type="text" maxlength="6" pattern="[0-9]{6}"></label>
+                <label class="datos_formulario" for="Nombre_Convenio">Nombre del Proyecto/Convenio: <input id="Nombre_Convenio" name="Nombre_Convenio" type="text"></label><br>
+                <span class="nota"> * En el caso de que la Razón Social corresponda a un organismo internacional (Coursera, Edx u otras plataformas) colocar N/A (No Aplica).</span><br><br>
+                <span class="nota"> ** En caso de que las actividades sean bajo Convenios o Proyectos, indicar el código y nombre del convenio o proyecto. </span>
+            </fieldset>
+            <fieldset>
+                <legend>5. INFORMACIÓN DE LAS ACTIVIDADES REALIZADAS</legend>
+                <fieldset>
+                    <label class="datos_formulario" for="Resumen_Actividades">Breve resumen de las actividades realizadas:
+                        <textarea id="Resumen_Actividades" rows="3" cols="30" placeholder="Resumen de sus Actividades..." name="Resumen_Actividades"></textarea>
+                    </label>
+                    <label class="datos_formulario" for="Contribucion_Actividades">¿De qué manera las actividades realizadas contribuyeron al perfil de egreso de su carrera?
+                        <textarea id="Contribucion_Actividades" rows="3" cols="30" name="Contribucion_Actividades" placeholder="Contribución de Actividades a su perfil de egreso... "></textarea>
+                    </label>
+                    <label class="datos_formulario" for="Resultado_Actividades">¿A qué resultados de aprendizaje del perfil de egreso considera que aportaron las actividades realizadas?
+                        <textarea id="Resultado_Actividades" name="Resultado_Actividades" rows="3" cols="30" placeholder="Resultados obtenidos para su perfil de egreso..."></textarea>
+                    </label>
+                    <label class="datos_formulario" for="Asignaturas_Actividades">¿Cuáles son las asignaturas de la malla curricular y las temáticas de mayor utilidad para el desarrollo de las actividades?
+                        <textarea id="Asignaturas_Actividades" name="Asignaturas_Actividades" rows="3" cols="30" placeholder="Las Asignaturas de mayor utilidad fueron..."></textarea>
+                    </label>
+                </fieldset>
+
+
+            </fieldset>
+            <fieldset>
+                <legend>6. INFORMACIÓN ADICIONAL</legend>
+                <label class="datos_formulario">Información de las fechas en las que realizó las actividades:</label>
+                <label class="datos_formulario" for="Fecha_Inicio_Practicas">Fecha Inicio: <input id="Fecha_Inicio_Practicas" name="Fecha_Inicio_Practicas" type="date"></label>
+                <label class="datos_formulario" for="Fecha_Fin_Practicas">Fecha Fin: <input id="Fecha_Fin_Practicas" name="Fecha_Fin_Practicas" type="date"></label>
+                <label class="datos_formulario" for="Horas_Solicitadas">Horas solicitadas:<input id="Horas_Solicitadas" name="Horas_Solicitadas" type="number" min="2" max="750" rows="2" cols="10" placeholder="(Indicar el número de horas a convalidar de prácticas pre profesionales y/o servicio comunitario)"></textarea></label>
+                <input id="prepo" type="radio" name="prepo-servi" value="prepo" required><label for="prepo">Practicas Preprofesionales</label>
+                <input id="servi" type="radio" name="prepo-servi" value="servi" required><label for="servi">Servicio Comunitario </label>
+            </fieldset>
+            <fieldset>
+                <legend>7. DECLARACIÓN</legend>
+                <label class="datos_formulario">Yo <input id="Nombres_y_Apellidos_Estudiante" type="text" name="Nombres_y_Apellidos_Estudiante">, declaro que la información presentada para la convalidación de prácticas preprofesionales es verídica.</label>
+                <label class="datos_formulario" for="Fecha_Declaracion">Fecha: <input id="Fecha_Declaracion" name="Fecha_Declaracion" type="date"></label>
+                <label class="datos_formulario" for="Firma_Declaracion">Firma: <input id="Firma_Declaracion" name="Firma_Declaracion" type="file"></label>
+            </fieldset>
+
+            <input type="submit" value="Enviar">
+        </form>
+
+        <!-- FUENTE DEL ERROR
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const formulario = document.querySelector('form'); // Selecciona el formulario
+        
+                // Agregar evento al formulario cuando se envía
+                formulario.addEventListener('submit', function(event) {
+                    event.preventDefault(); // Prevenir comportamiento por defecto del envío
+        
+                    // Aquí puedes enviar los datos a un servidor usando AJAX o fetch si lo necesitas
+        
+                    // Vaciar las casillas del formulario
+                    formulario.reset();
+                });
+            });
+        </script>  
+        -->
+         <!--script para mostrar mensaje en el formulario-->
+        <script>
+            setTimeout(function(){
+                elementoP = document.querySelector('.msg');
+                elementoP.style.display = 'none';
+            }, 3000);
+        </script>
+       
+       <!--Mostrar mensaje-->
+       {% if msg %}
+       <p class="msg">{{ msg }}</p>
+        {% endif %}
+
+    </body>
+</html>
