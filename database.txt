@@ -1,0 +1,92 @@
+
+/*
+drop table formulario;
+drop table actividades_convalidacion;
+drop table empresa_practica;
+drop table estudiante;
+drop table informacion_adicional;
+drop table informe_actividad;
+*/
+
+/*select max(id_documento) as id_documento from formulario;*/
+
+select * from formulario;
+select * from actividades_convalidacion;
+select * from empresa_practica;
+select * from estudiante;
+select * from informacion_adicional;
+select * from informe_actividad;
+
+
+CREATE schema formulario;
+
+USE formulario;
+
+CREATE TABLE formulario(
+id_documento mediumint not null auto_increment primary key,
+fecha_emision_formulario datetime not null
+) engine= InnoDB default charset=utf8mb4;
+
+CREATE TABLE estudiante
+(id_cedula numeric(10) not null primary key,
+id_doc_FK mediumint not null,
+nombre_ape_estudiante varchar(30) not null,
+correo_estudiante varchar(60) not null,
+telefono_estudiante numeric(10) not null,
+celular_estudiante numeric(10) not null,
+foreign key (id_doc_FK) REFERENCES formulario(id_documento) 
+on delete cascade  
+on update cascade);
+
+
+
+CREATE TABLE actividades_convalidacion
+(id_actividad mediumint auto_increment primary key,
+id_doc_FK mediumint not null,
+detalle_actividad text,
+tipo_actividad text,
+foreign key (id_doc_FK ) REFERENCES formulario(id_documento) 
+on delete cascade 
+on update cascade);
+
+/*posible tabla documentacion*/
+
+CREATE TABLE empresa_practica
+(RUC numeric(13) not null,
+id_doc_FK mediumint not null,
+razon_social varchar(30) not null,
+direccion_institucion varchar(60) not null,
+ciudad_pais_institucion varchar(30) not null,
+telefono_institucion numeric(10) not null,
+celular_institucion numeric(10) not null,
+correo_institucion varchar(40) not null,
+tipo_institucion varchar(40) not null,
+campo_amplio_institucion text not null,
+campo_especifico_institucion text not null,
+codigo_convenio_proyecto mediumint default 0000,
+nombre_convenio_proyecto varchar(30) default 'Desconocido',
+foreign key (id_doc_FK) REFERENCES formulario (id_documento) 
+on delete cascade 
+on update cascade);
+
+
+CREATE TABLE informe_actividad
+(id_actividades_realizadas mediumint primary key auto_increment,	/*inicio, incremento*/
+id_doc_FK mediumint not null,
+resumen_actividad text,
+actividad_egreso_carrera text,
+aporte_actividad text,
+asignaturas_utilidad_actidad text,
+foreign key (id_doc_FK) REFERENCES formulario (id_documento)
+ on delete cascade
+ on update cascade);
+
+CREATE TABLE informacion_adicional
+(id_info_adicional mediumint auto_increment primary key,
+id_doc_FK mediumint not null,
+fecha_inicio date,
+fecha_fin date,
+horas_solicitadas varchar(20),
+foreign key (id_doc_FK) REFERENCES formulario (id_documento) 
+on delete cascade
+ on update cascade);
